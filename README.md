@@ -4,8 +4,8 @@
 
 
 ## model creation
-Deep Learning FrameWork: Keras
-Technique: Transfer Learning -> ResNet 50, Mobile Net, VGG 16
+- Deep Learning FrameWork: Keras
+- Technique: Transfer Learning -> ResNet 50, Mobile Net, VGG 16
 
 ## Approach
 In this challenge I used 2 approaches:
