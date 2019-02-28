@@ -3,19 +3,19 @@
 ## Data preprocessing
 
 
-##model creation
+## model creation
 Deep Learning FrameWork: Keras
 Technique: Transfer Learning -> ResNet 50, Mobile Net, VGG 16
 
-##Approach
+## Approach
 In this challenge I used 2 approaches:
 Approach 1:
 In this approach I used 3 models and train them using real weights and calculate the accuracy of that.
 Approach 2:
 In this approach I used 3 models, and train them using pre trained weights.
 
-##Model  
-###For all the 3 models:
+## Model  
+### For all the 3 models:
 - with / without weights
 - Top layer = True (reshape the data)
 - Top layer = False
