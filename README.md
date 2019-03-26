@@ -1,7 +1,9 @@
 # RadAI
 
 ## Data preprocessing
+- The data set is not uploaded, because of its heavy size.
 load and resize the images using the helper function get_data(), and store them in 2 variables (x, y) as images and lables
+
 
 
 ## model creation
