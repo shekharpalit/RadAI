@@ -2,7 +2,24 @@
 
 ## Data preprocessing
 - The data set is not uploaded, because of its heavy size.
-load and resize the images using the helper function get_data(), and store them in 2 variables (x, y) as images and lables
+- The hierarchical structure of the image folder is shown below:
+images
+ ├── test
+ │   └── images
+ │       └── 000_0.png
+ │   └── mask
+ │       └── 000_0.png
+ ├── train
+ │   └── images
+ │       ├── 000_0.png
+ │       ├── 000_1.png
+ │   └── mask
+ │       ├── 000_0.png
+ │       ├── 000_1.png
+ 
+ The input model/data processing model is designed using this hierarchical structure of the image folder, if you want to use any other structure, feel free to modify the code.
+ 
+- load and resize the images using the helper function get_data(), and store them in 2 variables (x, y) as images and lables
 
 
 
@@ -12,17 +29,17 @@ load and resize the images using the helper function get_data(), and store them 
 ## Approach
 In this challenge I used a famous CNN network architecture called Unet which was developed for biomedical image segmentation
 
--It consists of the repeated application of two 3×3 convolutions, each followed by a batchnormalization layer and a rectified linear unit (ReLU) activation and dropout and a 2×2 max pooling operation with stride 2 for downsampling
+- It consists of the repeated application of two 3×3 convolutions, each followed by a batchnormalization layer and a rectified linear unit (ReLU) activation and dropout and a 2×2 max pooling operation with stride 2 for downsampling
 
--The purpose of this contracting path is to capture the context of the input image in order to be able to do segmentation.
+- The purpose of this contracting path is to capture the context of the input image in order to be able to do segmentation.
 
--Every step in the expansive path consists of an upsampling of the feature map followed by a 2×2 convolution (“up-convolution”) that halves the number of feature channels, a concatenation with the correspondingly feature map from the contracting path, and two 3×3 convolutions, each followed by batchnorm, dropout and a ReLU.
+- Every step in the expansive path consists of an upsampling of the feature map followed by a 2×2 convolution (“up-convolution”) that halves the number of feature channels, a concatenation with the correspondingly feature map from the contracting path, and two 3×3 convolutions, each followed by batchnorm, dropout and a ReLU.
 
--The purpose of this expanding path is to enable precise localization combined with contextual information from the contracting path.
+- The purpose of this expanding path is to enable precise localization combined with contextual information from the contracting path.
 
--final layer a 1×1 convolution is used to map each 16- component feature vector to the desired number of classes.
+- final layer a 1×1 convolution is used to map each 16- component feature vector to the desired number of classes.
 
-##Note
--This model is developed and tested in a underpowered laptop(macbook air), so the dataset used in this is 1/3 of the orignal dataset. However, the model will work perfectly in a large dataset.
--This model is designed to run on a GPU (cuda not used, but we can use it in future work)
+## Note
+- This model is developed and tested in a underpowered laptop(macbook air), so the dataset used in this is 1/3 of the orignal dataset. However, the model will work perfectly in a large dataset.
+- This model is designed to run on a GPU (cuda not used, but we can use it for future work)
 
