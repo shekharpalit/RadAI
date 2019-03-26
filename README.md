@@ -4,6 +4,7 @@
 - The data set is not uploaded, because of its heavy size.
 - The hierarchical structure of the image folder is shown below:
 images
+"
  ├── test
  │   └── images
  │       └── 000_0.png
@@ -16,6 +17,7 @@ images
  │   └── mask
  │       ├── 000_0.png
  │       ├── 000_1.png
+ "
  
  The input model/data processing model is designed using this hierarchical structure of the image folder, if you want to use any other structure, feel free to modify the code.
  
